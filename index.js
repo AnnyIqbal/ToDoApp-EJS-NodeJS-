@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(`__dirname/views`));
 
 app.get('/', urlencodedParser, function(req, res) {
-    res.render('./todo.ejs', {list: todoList});
+    res.render('./todo.ejs', {list: " "});
 });
 
 app.post('/', urlencodedParser, function(req, res) {

@@ -6,23 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToDoApp Post Method</title>
+    <style>
+        body {
+            width: 50vw;
+            margin: 5px auto;
+            text-align: center;
+        }
+        form {
+            width: 100%;
+            margin: 5px auto;
+        }
+        input {
+            padding: 5px;
+        }
+        #task {
+            width: 80%;
+            margin: 5px auto;
+        }
+        li {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
+    <h1> To Do App </h1>   
+
     <form method="post" action="/">
-        <input type="text" name="task" placeholder="Enter Task Todo" />
+        <input autofocus id="task" type="text" name="task" placeholder="Enter Task Todo" />
         <input type="submit" value="submit" />
     </form>
 
-    <h1> To Do List </h1>   
+    <h1> To Do List </h1> 
+
     <% console.log(list) %>
-    <ul>
-    <% for(let i = 0; i < list.length; i++) { %>
-       <li> 
-            <%= list[i] %>
-            <button onclick="dlt(this)"> x </button>
-       </li>
+    <% if(list !== ' ') { %>
+        <ul>
+            <% for(let i = 0; i < list.length; i++) { %>
+                <li> 
+                        <%= list[i] %>
+                        <button onclick="dlt(this)"> x </button>
+                </li>
+            <% } %>
+        </ul>
     <% } %>
-    </ul>
 
     <script>
         function dlt(x) {
