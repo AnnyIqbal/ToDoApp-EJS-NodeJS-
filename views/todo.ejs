@@ -42,16 +42,17 @@
     <% if(list !== ' ') { %>
         <ul>
             <% for(let i = 0; i < list.length; i++) { %>
-                <li> 
-                        <%= list[i] %>
-                        <button onclick="dlt(this)"> x </button>
+                <li>
+                    <%= list[i] %>
+                    <button onclick="dlt(this, <%= i %>)"> x </button>
                 </li>
             <% } %>
         </ul>
     <% } %>
 
     <script>
-        function dlt(x) {
+        function dlt(x, i) {
+            <% list.splice %>(i, 1);
             x.parentElement.remove();
         }
     </script>

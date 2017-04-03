@@ -4,10 +4,11 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // create application/json parser 
-var jsonParser = bodyParser.json()
+var jsonParser = bodyParser.json();
  
 // create application/x-www-form-urlencoded parser 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 let todoList = [];
 
 app.set('view engine', 'ejs');
@@ -30,3 +31,5 @@ app.get('/favicon', function(req, res) {
 app.listen(3000, function(){
     console.log('Server is running on port 3000');
 });
+
+// console.log('...', x.parentElement.innerHTML.split('<')[0]);
