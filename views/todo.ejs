@@ -17,9 +17,17 @@
     <% console.log(list) %>
     <ul>
     <% for(let i = 0; i < list.length; i++) { %>
-       <li> <%= list[i] %> </li>
+       <li> 
+            <%= list[i] %>
+            <button onclick="dlt(this)"> x </button>
+       </li>
     <% } %>
     </ul>
 
+    <script>
+        function dlt(x) {
+            x.parentElement.remove();
+        }
+    </script>
 </body>
 </html>
