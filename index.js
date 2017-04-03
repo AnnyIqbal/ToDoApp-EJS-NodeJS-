@@ -8,6 +8,7 @@ var jsonParser = bodyParser.json()
  
 // create application/x-www-form-urlencoded parser 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+let todoList = [];
 
 app.set('view engine', 'ejs');
 
@@ -18,8 +19,8 @@ app.get('/', urlencodedParser, function(req, res) {
 });
 
 app.post('/', urlencodedParser, function(req, res) {
-    console.log(req.body.task);
-    res.render('./todo.ejs', {task: req.body.task});
+    todoList.push(req.body.task);
+    res.render('./todo.ejs', {list: todoList});
 });
 
 app.get('/favicon', function(req, res) {
