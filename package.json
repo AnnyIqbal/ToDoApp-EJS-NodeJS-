@@ -1,0 +1,26 @@
+{
+  "name": "todoapp-ejs-post",
+  "version": "1.0.0",
+  "description": "Todo App with Post Method made in NodeJS using EJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "todoapp",
+    "ejs",
+    "nodejs",
+    "postmethod",
+    "post",
+    "todo",
+    "todoejs"
+  ],
+  "author": "AnnyIqbal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0"
+  }
+}
