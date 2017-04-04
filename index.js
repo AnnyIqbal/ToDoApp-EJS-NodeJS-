@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(`__dirname/views`));
 
 app.get('/', urlencodedParser, function(req, res) {
-    res.render('./todo.ejs', {list: " "});
+    res.render('./todo.ejs', {list: 0});
 });
 
 app.post('/', urlencodedParser, function(req, res) {
@@ -24,12 +24,16 @@ app.post('/', urlencodedParser, function(req, res) {
     res.render('./todo.ejs', {list: todoList});
 });
 
-app.get('/favicon', function(req, res) {
-    res.send('Favicon');
+app.post('/dlt/:id', function(req, res) {
+    let index = req.url.split(':')[1];
+    todoList.splice(index, 1);
+    res.render('./todo.ejs', {list: todoList});
+});
+
+app.get('*', function(req, res) {
+    res.send('404');
 });
 
 app.listen(3000, function(){
     console.log('Server is running on port 3000');
 });
-
-// console.log('...', x.parentElement.innerHTML.split('<')[0]);
